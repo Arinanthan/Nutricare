@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Nutri Care - Mobile Screen Fit (Gobi)</title>
+    <title>Nutri Care - Mobile Optimized (Gobi)</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -16,20 +16,42 @@
         }
 
         body {
-            background: #f8fafc;
+            background: #f1f5f9;
             color: #1e293b;
-            width: 100%;
-            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Direct Mobile Screen Fit Container */
+        /* 100% Mobile Screen Responsive Container */
         .app-container {
             width: 100%;
+            max-width: 480px;
             min-height: 100vh;
             background: #f8fafc;
             position: relative;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        }
+
+        @media (min-width: 481px) {
+            .app-container {
+                min-height: 92vh;
+                max-height: 92vh;
+                border-radius: 24px;
+                overflow-y: auto;
+                border: 8px solid #0f172a;
+            }
+            .app-container::-webkit-scrollbar {
+                width: 4px;
+            }
+            .app-container::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 4px;
+            }
         }
 
         header {
@@ -172,15 +194,15 @@
 
         @keyframes driveVan {
             0% { left: -80px; }
-            35% { left: 35%; }
-            70% { left: 35%; }
-            100% { left: 110%; }
+            35% { left: 110px; }
+            70% { left: 110px; }
+            100% { left: 400px; }
         }
 
         .kids-container {
             position: absolute;
             bottom: 18px;
-            left: 45%;
+            left: 140px;
             display: flex;
             gap: 6px;
             animation: kidsSequence 6s ease-in-out infinite;
@@ -352,8 +374,8 @@
 
         .cart-drawer {
             background: white;
-            width: 85%;
-            max-width: 320px;
+            width: 100%;
+            max-width: 340px;
             height: 100%;
             padding: 16px;
             display: flex;
